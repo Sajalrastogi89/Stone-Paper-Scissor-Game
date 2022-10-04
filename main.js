@@ -1,3 +1,4 @@
+let count1=0;let count2=0;let id1;let id2;
 let x = document.getElementById("first");
 const slideshowdiv = document.querySelectorAll("#bg-image div");
 const nextImagewait = 4000;
@@ -29,16 +30,19 @@ function originalColor() {
 let y;
 function Stone() {
     document.getElementById("stone1").style.marginLeft = "190px";
+    id1="stone1";
     y = randomNumber();
     decisionStone(y);
 }
 function Paper() {
     document.getElementById("paper1").style.marginLeft = "190px";
+   id1="paper1";
     y = randomNumber();
     decisionPaper(y);
 }
 function Scissor() {
     document.getElementById("scissor1").style.marginLeft = "190px";
+    id1="scissor1";
     y = randomNumber();
     decisionScissor(y);
 }
@@ -52,12 +56,15 @@ function computerDecision(b) {
     switch (b) {
         case 0:
             document.getElementById("stone2").style.marginRight = "190px";
+            id2="stone2";
             break;
         case 1:
             document.getElementById("paper2").style.marginRight = "190px";
+            id2="paper2"
             break;
         case 2:
             document.getElementById("scissor2").style.marginRight = "190px";
+            id2="scissor2";
             break;
     }
 }
@@ -66,7 +73,7 @@ function decisionStone(d) {
     switch (d) {
         case 0:
             alert("Draw");
-            Draw();
+          
             break;
         case 1:
             alert("You Lost");
@@ -88,7 +95,7 @@ function decisionPaper(d) {
         case 1:
             alert("Draw");
 
-            Draw();
+         
             break;
         case 2:
             alert("You Lost");
@@ -106,7 +113,7 @@ function decisionScissor(d) {
             user();
             break;
         case 2:
-            Draw();
+           
             alert("Draw");
 
     }
@@ -115,12 +122,16 @@ function decisionScissor(d) {
 
 }
 function user() {
-    document.getElementById("item-1").innerHTML = 1;
+    document.getElementById("item-1").innerHTML = ++count1;
 }
 function computer() {
-    document.getElementById("item-2").innerHTML = 1;
+    document.getElementById("item-2").innerHTML = ++count2;
 }
-function Draw() {
-    document.getElementById("item-1").innerHTML = 1;
-    document.getElementById("item-2").innerHTML = 1;
+// function Draw() {
+//     document.getElementById("item-1").innerHTML = ++count1;
+//     document.getElementById("item-2").innerHTML = count;
+// }
+function defaultLocation(){
+document.getElementById(id1).style.marginLeft = 0;
+document.getElementById(id2).style.marginRight = 0;
 }

@@ -220,6 +220,8 @@ button {
     background-color: #4CAF50;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    height: 5vh;
+    width: 10vw;
 }
 
 button:hover {
@@ -233,5 +235,6 @@ button:active {
 }
 
 .button {
+  
     justify-content: space-evenly;
 }
