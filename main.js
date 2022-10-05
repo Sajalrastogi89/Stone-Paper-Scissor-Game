@@ -1,4 +1,4 @@
-let count1=0;let count2=0;let id1;let id2;let resultId;
+let count1 = 0; let count2 = 0; let id1; let id2; let resultId;
 let x = document.getElementById("first");
 const slideshowdiv = document.querySelectorAll("#bg-image div");
 
@@ -10,7 +10,7 @@ setInterval(nextImage, nextImagewait);
 function nextImage() {
     slideshowdiv[currentImage].style.opacity = 0;
     currentImage = (currentImage + 1) % (slideshowdiv.length);
-   
+
     slideshowdiv[currentImage].style.opacity = 1;
     if ((currentImage >= 0 && currentImage < 5) || (currentImage > 19 && currentImage <= 24)) {
         changeColor();
@@ -34,22 +34,22 @@ function Stone() {
     document.getElementById("stone1").style.marginLeft = "20%";
 
 
-    
-    id1="stone1";
+
+    id1 = "stone1";
     y = randomNumber();
     decisionStone(y);
 }
 function Paper() {
     restrict();
     document.getElementById("paper1").style.marginLeft = "20%";
-   id1="paper1";
+    id1 = "paper1";
     y = randomNumber();
     decisionPaper(y);
 }
 function Scissor() {
     restrict();
     document.getElementById("scissor1").style.marginLeft = "20%";
-    id1="scissor1";
+    id1 = "scissor1";
     y = randomNumber();
     decisionScissor(y);
 }
@@ -63,15 +63,15 @@ function computerDecision(b) {
     switch (b) {
         case 0:
             document.getElementById("stone2").style.marginRight = "20%";
-            id2="stone2";
+            id2 = "stone2";
             break;
         case 1:
             document.getElementById("paper2").style.marginRight = "20%";
-            id2="paper2"
+            id2 = "paper2"
             break;
         case 2:
             document.getElementById("scissor2").style.marginRight = "20%";
-            id2="scissor2";
+            id2 = "scissor2";
             break;
     }
 }
@@ -80,7 +80,7 @@ function decisionStone(d) {
     switch (d) {
         case 0:
             result("draw");
-          
+
             break;
         case 1:
             result("lost");
@@ -101,7 +101,7 @@ function decisionPaper(d) {
         case 1:
             result("draw");
 
-         
+
             break;
         case 2:
             result("lost");
@@ -119,69 +119,55 @@ function decisionScissor(d) {
             user();
             break;
         case 2:
-           
+
             result("draw");
 
     }
 
-
-
 }
 function user() {
     document.getElementById("item-1").innerHTML = ++count1;
-//     if(count1==3){
-//         document.getElementById("congrats").style.display = "block";
-// }
+
 }
 function computer() {
     document.getElementById("item-2").innerHTML = ++count2;
-    // if(count2==3){
-    //     document.getElementById("sorry").style.display = "block";
-    // }
+
 }
 
-
-
-// function Draw() {
-//     document.getElementById("item-1").innerHTML = ++count1;
-//     document.getElementById("item-2").innerHTML = count;
-// }
-
-
-function result(idToChange){
-    resultId=idToChange;
+function result(idToChange) {
+    resultId = idToChange;
     document.getElementById(idToChange).style.display = "block";
 }
 
-function defaultLocation(){
+function defaultLocation() {
     document.getElementById(id1).style.marginLeft = 0;
     document.getElementById(id2).style.marginRight = 0;
 
-   document.getElementById(resultId).style.display = "none";
-   unrestrict();
-     if(count1==3){
+    document.getElementById(resultId).style.display = "none";
+    unrestrict();
+    if (count1 == 3) {
         document.getElementById("congrats").style.display = "block";
-    disable();
+        disable();
     }
-    else if(count2==3){
+    else if (count2 == 3) {
         document.getElementById("sorry").style.display = "block";
-    disable();
+        disable();
     }
 }
-const buttonNode=document.querySelectorAll("button");
+const buttonNode = document.querySelectorAll("button");
 
-function disable(){
-for(let i=1;i<5;i++){
-    buttonNode[i].disabled = true;
-}
-}
-function restrict(){
-    for(let i=1;i<4;i++){
+function disable() {
+    for (let i = 1; i < 5; i++) {
         buttonNode[i].disabled = true;
     }
+}
+function restrict() {
+    for (let i = 1; i < 4; i++) {
+        buttonNode[i].disabled = true;
     }
-    function unrestrict(){
-        for(let i=1;i<4;i++){
-            buttonNode[i].disabled = false;
-        }  
+}
+function unrestrict() {
+    for (let i = 1; i < 4; i++) {
+        buttonNode[i].disabled = false;
     }
+}
