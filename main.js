@@ -29,19 +29,19 @@ function originalColor() {
 }
 let y;
 function Stone() {
-    document.getElementById("stone1").style.marginLeft = "190px";
+    document.getElementById("stone1").style.marginLeft = "20%";
     id1="stone1";
     y = randomNumber();
     decisionStone(y);
 }
 function Paper() {
-    document.getElementById("paper1").style.marginLeft = "190px";
+    document.getElementById("paper1").style.marginLeft = "20%";
    id1="paper1";
     y = randomNumber();
     decisionPaper(y);
 }
 function Scissor() {
-    document.getElementById("scissor1").style.marginLeft = "190px";
+    document.getElementById("scissor1").style.marginLeft = "20%";
     id1="scissor1";
     y = randomNumber();
     decisionScissor(y);
@@ -55,15 +55,15 @@ function randomNumber() {
 function computerDecision(b) {
     switch (b) {
         case 0:
-            document.getElementById("stone2").style.marginRight = "190px";
+            document.getElementById("stone2").style.marginRight = "20%";
             id2="stone2";
             break;
         case 1:
-            document.getElementById("paper2").style.marginRight = "190px";
+            document.getElementById("paper2").style.marginRight = "20%";
             id2="paper2"
             break;
         case 2:
-            document.getElementById("scissor2").style.marginRight = "190px";
+            document.getElementById("scissor2").style.marginRight = "20%";
             id2="scissor2";
             break;
     }
