@@ -7,9 +7,9 @@ slideshowdiv[currentImage].style.opacity = 1;
 
 setInterval(nextImage, nextImagewait);
 function nextImage() {
-
-    currentImage = (currentImage + 1) % (slideshowdiv.length);
     slideshowdiv[currentImage].style.opacity = 0;
+    currentImage = (currentImage + 1) % (slideshowdiv.length);
+   
     slideshowdiv[currentImage].style.opacity = 1;
     if ((currentImage >= 0 && currentImage < 5) || (currentImage > 19 && currentImage <= 24)) {
         changeColor();
