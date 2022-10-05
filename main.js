@@ -2,7 +2,7 @@ let count1=0;let count2=0;let id1;let id2;
 let x = document.getElementById("first");
 const slideshowdiv = document.querySelectorAll("#bg-image div");
 const nextImagewait = 4000;
-let currentImage = 0;
+let currentImage = 15;
 slideshowdiv[currentImage].style.opacity = 1;
 
 setInterval(nextImage, nextImagewait);
