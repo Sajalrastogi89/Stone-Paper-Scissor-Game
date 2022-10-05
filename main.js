@@ -1,6 +1,7 @@
 let count1=0;let count2=0;let id1;let id2;let resultId;
 let x = document.getElementById("first");
 const slideshowdiv = document.querySelectorAll("#bg-image div");
+
 const nextImagewait = 4000;
 let currentImage = 15;
 slideshowdiv[currentImage].style.opacity = 1;
@@ -29,18 +30,24 @@ function originalColor() {
 }
 let y;
 function Stone() {
+    restrict();
     document.getElementById("stone1").style.marginLeft = "20%";
+
+
+    
     id1="stone1";
     y = randomNumber();
     decisionStone(y);
 }
 function Paper() {
+    restrict();
     document.getElementById("paper1").style.marginLeft = "20%";
    id1="paper1";
     y = randomNumber();
     decisionPaper(y);
 }
 function Scissor() {
+    restrict();
     document.getElementById("scissor1").style.marginLeft = "20%";
     id1="scissor1";
     y = randomNumber();
@@ -151,10 +158,30 @@ function defaultLocation(){
     document.getElementById(id2).style.marginRight = 0;
 
    document.getElementById(resultId).style.display = "none";
+   unrestrict();
      if(count1==3){
         document.getElementById("congrats").style.display = "block";
+    disable();
     }
     else if(count2==3){
         document.getElementById("sorry").style.display = "block";
+    disable();
     }
 }
+const buttonNode=document.querySelectorAll("button");
+
+function disable(){
+for(let i=1;i<5;i++){
+    buttonNode[i].disabled = true;
+}
+}
+function restrict(){
+    for(let i=1;i<4;i++){
+        buttonNode[i].disabled = true;
+    }
+    }
+    function unrestrict(){
+        for(let i=1;i<4;i++){
+            buttonNode[i].disabled = false;
+        }  
+    }

@@ -243,15 +243,19 @@ button:active {
 font-size: 2rem;
 font-weight: 900;
 font-style: italic;
+height: 100px;
+width: 100px;
 
 }
 span{
     position: absolute;
     top: 0;
     left: 0;
+   align-items: center;
     display: none;
     
 }
+
 @media(max-width:414px){
     #front{
         font-size: 60%;
@@ -260,5 +264,8 @@ span{
         font-size: 15px;
         color: inherit;
     }
+  #result-content{
+    font-size: 20px;
+  }
     
 }
