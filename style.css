@@ -216,7 +216,7 @@ button {
 
 
 
-
+color: inherit;
     background-color: #4CAF50;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -237,4 +237,13 @@ button:active {
 .button {
   
     justify-content: space-evenly;
+}
+@media(max-width:414px){
+    #front{
+        font-size: 60%;
+    }
+    button{
+        font-size: 15px;
+        color: inherit;
+    }
 }
