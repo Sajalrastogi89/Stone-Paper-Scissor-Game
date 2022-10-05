@@ -1,4 +1,4 @@
-let count1=0;let count2=0;let id1;let id2;
+let count1=0;let count2=0;let id1;let id2;let resultId;
 let x = document.getElementById("first");
 const slideshowdiv = document.querySelectorAll("#bg-image div");
 const nextImagewait = 4000;
@@ -72,49 +72,48 @@ function computerDecision(b) {
 function decisionStone(d) {
     switch (d) {
         case 0:
-            alert("Draw");
+            result("draw");
           
             break;
         case 1:
-            alert("You Lost");
+            result("lost");
             computer();
             break;
         case 2:
 
-            alert("Congratulations");
+            result("won");
             user();
     }
 }
 function decisionPaper(d) {
     switch (d) {
         case 0:
-            alert("Congratulations");
-
+            result("won");
             user();
             break;
         case 1:
-            alert("Draw");
+            result("draw");
 
          
             break;
         case 2:
-            alert("You Lost");
+            result("lost");
             computer();
     }
 }
 function decisionScissor(d) {
     switch (d) {
         case 0:
-            alert("You Lost");
+            result("lost");
             computer();
             break;
         case 1:
-            alert("Congratulations");
+            result("won");
             user();
             break;
         case 2:
            
-            alert("Draw");
+            result("draw");
 
     }
 
@@ -123,15 +122,39 @@ function decisionScissor(d) {
 }
 function user() {
     document.getElementById("item-1").innerHTML = ++count1;
+//     if(count1==3){
+//         document.getElementById("congrats").style.display = "block";
+// }
 }
 function computer() {
     document.getElementById("item-2").innerHTML = ++count2;
+    // if(count2==3){
+    //     document.getElementById("sorry").style.display = "block";
+    // }
 }
+
+
+
 // function Draw() {
 //     document.getElementById("item-1").innerHTML = ++count1;
 //     document.getElementById("item-2").innerHTML = count;
 // }
+
+
+function result(idToChange){
+    resultId=idToChange;
+    document.getElementById(idToChange).style.display = "block";
+}
+
 function defaultLocation(){
-document.getElementById(id1).style.marginLeft = 0;
-document.getElementById(id2).style.marginRight = 0;
+    document.getElementById(id1).style.marginLeft = 0;
+    document.getElementById(id2).style.marginRight = 0;
+
+   document.getElementById(resultId).style.display = "none";
+     if(count1==3){
+        document.getElementById("congrats").style.display = "block";
+    }
+    else if(count2==3){
+        document.getElementById("sorry").style.display = "block";
+    }
 }

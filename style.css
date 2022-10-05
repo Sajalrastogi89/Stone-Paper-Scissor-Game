@@ -238,6 +238,20 @@ button:active {
   
     justify-content: space-evenly;
 }
+#result-content{
+    position: relative;
+font-size: 2rem;
+font-weight: 900;
+font-style: italic;
+
+}
+span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    
+}
 @media(max-width:414px){
     #front{
         font-size: 60%;
