@@ -10,7 +10,7 @@ Welcome to the Stone Paper Scissors game! This project is a simple implementatio
 
 ## Deployment
 
-You can play the game [here](<deployment_link>).
+You can play the game [here](<https://sajalrastogi89.github.io/Stone-Paper-Scissor-Game/>).
 
 ## How to Play
 
